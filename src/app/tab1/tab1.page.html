@@ -1,8 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
+    <ion-title (click)="onClick2()">
       Tab 1
     </ion-title>
+    <ion-icon slot="end" name="add" (click)="onClick()"></ion-icon>
+    <ion-icon slot="end" name="add" (click)="onClick3()"></ion-icon>
+
   </ion-toolbar>
 </ion-header>
 

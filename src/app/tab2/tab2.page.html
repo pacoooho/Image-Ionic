@@ -7,11 +7,33 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+
+
+  <form (submit)="uploadPhoto(title, description)">
+    <ion-item>
+
+      <input type="text" placeholder="Photo's Title" [(ngModel)]="name" name="name" #title required>
+    </ion-item>
+    <ion-item>
+      <input type="text" placeholder="Photo's description" #description required>
+    </ion-item>
+    <input [hidden]="true" type="file" (change)="onPhotoSelected($event)" #photoInput>
+    <ion-img *ngIf="!photoSelected ; else elsePNG" [src]="'assets/no-image.png'" class="img-fluid" alt="No imagess"
+      (click)="photoInput.click()"></ion-img>
+    <ng-template #elsePNG>
+      <img *ngIf="typeForm == 'png'; else elseBlock" [src]="photoSelected" class="img-fluid"
+        (click)="photoInput.click()">
+    </ng-template>
+    <ng-template #elseBlock>
+      <video loop muted="muted" autoplay class="img-fluid" (click)="photoInput.click()">
+        <source [src]="photoSelected" type="video/mp4">mp4
+      </video>
+    </ng-template>
+    <ion-img *ngIf="photoSelected2"  [src]="photoSelected2" class="img-fluid" alt="No imagess"
+     ></ion-img>
+    <ion-button block color="primary" type="submit" [disabled]="false">
+      Login
+    </ion-button>
+  </form>
 </ion-content>

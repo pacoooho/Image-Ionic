@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Charts
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    
+  
+    <ion-card>
+      <ion-card-header  (click)="onClick()">
+        Bar Chart
+      </ion-card-header>
+      
+      <ion-card-content>
+        <canvas #barCanvas ></canvas>
+      </ion-card-content>
+    </ion-card>
+    
+    <ion-card>
+      <ion-card-header>
+        Radar
+      </ion-card-header>
+      
+      <ion-card-content>
+        <canvas #radarChart ></canvas>
+      </ion-card-content>
+    </ion-card>
+
+ 
+
+    <ion-card>
+      <ion-card-header>
+        Bar Chart2
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #barCanvas2></canvas>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        Line Chart
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #lineCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
